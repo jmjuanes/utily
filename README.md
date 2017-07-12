@@ -15,6 +15,61 @@ npm install --save utily
 
 ## API 
 
+### File functions 
+
+#### utily.file.exists(file, cb)
+
+Check if the file exists, and then the `cb` method will be executed with two arguments (`error` and a boolean `exists` that indicates if the file exists).
+
+```javascript
+utily.file.exists('/path/to/my/file.txt', function(error, exists)
+{
+  //Check the error 
+  if(error)
+  {
+    //Something went wrong...
+  }
+  
+  //Check if the file exists 
+  if(exists === true)
+  {
+    //File exists 
+  }
+  else 
+  {
+    //File does not exists...
+  }
+});
+```
+
+#### utily.file.rm(files, cb)
+
+Remove a list of files. The `files` argument must be a `string` for a single file, or an `array` with the file paths to remove.
+
+```javascript
+//Remove multiple files
+utily.file.rm([ './file1.txt', './file2.txt' ], function(error)
+{
+  //Check if there is an error 
+  if(error)
+  {
+    //Something went wrong...
+  }
+  
+});
+
+//Remove a single file 
+utily.file.rm('./another-file.txt', function(error)
+{
+  //Check if there is an error 
+  if(error)
+  {
+    //Something went wrong...
+  }
+  
+});
+```
+
 ### Object functions 
 
 #### utily.object.keys(obj)
