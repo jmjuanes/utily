@@ -1,0 +1,11 @@
+{
+  "name": "utily",
+  "description": "A set of useful functions for node.js",
+  "version": "0.0.1",
+  "author": "Josemi Juanes <josemijuanes@gmail.com>",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/jmjuanes/utily.git" },
+  "main": "index.js",
+  "keywords": [ "util", "utils", "utility" ],
+  "dependencies": {}
+}
