@@ -76,6 +76,121 @@ utily.file.rm('./another-file.txt', function(error)
 });
 ```
 
+
+### Is functions
+
+A set of functions to check the type of a given value. 
+
+#### utily.is.undefined(value)
+
+Return true if `value` is undefined.
+
+```javascript
+var a;
+var b = 'Hello';
+utily.is.undefined(a);  // -> true, `a` is not defined
+utily.is.undefined(b);  // -> false, `b` is a string
+```
+
+#### utily.is.string(value)
+
+Return true if `value` is a string.
+
+```javascript
+utily.is.string('Hello world');   // -> true 
+utily.is.string('');              // -> true
+utily.is.string({ a: 'Hello' });  // -> false
+```
+
+#### utily.is.object(value)
+
+Return true if `value` is an object.
+
+```javascript
+utily.is.object({});    // -> true
+utily.is.object(null);  // -> false 
+```
+
+#### utily.is.array(value)
+
+Return true if `value` is an array.
+
+```javascript
+utily.is.array([ 1, 2, 3 ]);  // -> true 
+utily.is.array({ a: true });  // -> false
+```
+
+#### utily.is.stream(value)
+
+Return true if `value` is a stream.
+
+```javascript
+utily.is.stream(fs.createReadStream('file.txt'));  // -> true
+utily.is.stream({ });                              // -> false
+```
+
+#### utily.is.null(value)
+
+Return true if `value` is `null`.
+
+```javascript
+utily.is.null(null);  // -> true
+utily.is.null({ });   // -> false
+```
+
+#### utily.is.integer(value)
+
+Return true if `value` is an integer number.
+
+```javascript
+utily.is.integer(45);   // -> true
+utily.is.integer(2.5);  // -> false
+```
+
+#### utily.is.number(value)
+
+Return true if `value` is a number;
+
+```javascript
+utily.is.number(1235.2);  // --> true
+utily.is.number('1234');  // -> false
+```
+
+#### utily.is.boolean(value)
+
+Return true if `value` is a boolean.
+
+```javascript
+utily.is.boolean(true);  // -> true  
+utily.is.boolean(0);     // -> false
+```
+
+#### utily.is.function(value)
+
+Return true if `value` is a function.
+
+```javascript
+utily.is.function(function(){ return 0; });  // -> true
+```
+
+#### utily.is.buffer(value)
+
+Return true if `value` is a buffer.
+
+```javascript
+utily.is.buffer(new Buffer(10));  // -> true
+```
+
+#### utily.is.regexp(value)
+
+Return true if `value` is a regular expression.
+
+```javascript
+utily.is.regexp(/\s/g);  // -> true
+```
+
+
+
 ### Object functions 
 
 #### utily.object.keys(obj)
