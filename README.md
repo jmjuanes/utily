@@ -215,7 +215,7 @@ utily.is.regexp(/\s/g);  // -> true
 
 Read a JSON `file` and convert it's content to a JSON object using [`JSON.parse`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) method.
 
-The `options` object will be passed to [`fs.readfile`](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback).
+The `options` object will be passed to [`fs.readFile`](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback).
 
 ```javascript
 //Read a JSON file 
