@@ -76,6 +76,25 @@ utily.file.rm('./another-file.txt', function(error)
 });
 ```
 
+#### utily.file.size(file, cb)
+
+Returns the size of the file. The callback function will be executed with an `error` object and the `size` of the file.
+
+```javascript
+//Get the size of the file 
+utily.file.size('/path/to/file.txt', function(error, size)
+{
+  //Check the error 
+  if(error)
+  {
+    //Something went wrong...
+  }
+  
+  console.log('The size of the file is: ' + size);
+});
+```
+
+
 
 ### Is functions
 
