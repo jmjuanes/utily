@@ -209,6 +209,50 @@ utily.is.regexp(/\s/g);  // -> true
 ```
 
 
+### JSON functions 
+
+#### utily.json.read(file\[, options\], callback)
+
+Read a JSON `file` and convert it's content to a JSON object using [`JSON.parse`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) method.
+
+The `options` object will be passed to [`fs.readfile`](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback).
+
+```javascript
+//Read a JSON file 
+utily.json.read('/my/file.json', 'utf8', function(error, data)
+{
+  //Check the error 
+  if(error)
+  {
+    //Something went wrong
+  }
+  
+  //Print the JSON object in console
+  console.log(data);
+});
+```
+
+#### utily.json.write(file, object\[, opt\], callback)
+
+Converts a JSON `object` to string using the [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) and then it will be written to the provided `file` path.
+
+The `options` object will be passed to [`fs.writeFile`](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback).
+
+```javascript
+//Initialize my object 
+var obj = { key1: 'value1', key2: 'value2' };
+
+//Write to a file 
+utily.json.write('/my/file.json', obj, 'utf8', function(error)
+{
+  //Check the error 
+  if(error)
+  {
+    //Something went wrong
+  }
+});
+```
+
 
 ### Object functions 
 
