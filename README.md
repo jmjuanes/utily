@@ -209,6 +209,37 @@ Returns an array of a given object's own enumerable property values. It's a pony
 var values = utily.object.values({ a: 1, b: 2, c: 'hello' }); // -> values = [ 1, 2, 'hello' ]
 ```
 
+
+### String functions 
+
+#### utily.string.is_empty(str)
+
+Return true if `str` is an empty string.
+
+```javascript
+utily.string.is_empty('');   // -> true
+utily.string.is_empty(' ');  // -> false
+```
+
+#### utily.string.is_lowercase(str)
+
+Return true if `str` is a string in lowercase format.
+
+```javascript
+utily.string.is_lowercase('hello world');  // -> true
+utily.string.is_lowercase('Hello World');  // -> false
+```
+
+#### utily.string.is_uppercase(str)
+
+Return true if `str` is a string in uppercase format;
+
+```javascript
+utily.string.is_uppercase('HELLO WORLD');  // -> true
+utily.string.is_uppercase('Hello World');  // -> false
+```
+
+
 ## License 
 
 Under the [MIT LICENSE](./LICENSE).
