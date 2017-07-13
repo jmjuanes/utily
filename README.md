@@ -13,6 +13,12 @@ Use [npm](https://npmjs.com) to install this module:
 npm install --save utily
 ```
 
+Now you can import it into your project:
+
+```javascript
+var utily = require('utily');
+```
+
 ## API 
 
 ### File functions 
