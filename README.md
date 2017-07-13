@@ -239,6 +239,22 @@ utily.string.is_uppercase('HELLO WORLD');  // -> true
 utily.string.is_uppercase('Hello World');  // -> false
 ```
 
+#### utily.string.camel_case(str)
+
+Return the camel-case format of `str`.
+
+```javascript
+utily.string.camel_case('hello world');  // -> 'helloWorld'
+```
+
+#### utily.string.capitalize(str)
+
+Return the capitalized format of `str`.
+
+```javascript
+utily.string.capitalize('hello world');  // -> 'Hello world'
+```
+
 
 ## License 
 
