@@ -48,6 +48,25 @@ utily.fs.exists('/path/to/my/file.txt', function(error, exists)
 });
 ```
 
+#### utily.fs.size(file, cb)
+
+Returns the size of the file. The callback function will be executed with an `error` object and the `size` of the file.
+
+```javascript
+//Get the size of the file 
+utily.fs.size('/path/to/file.txt', function(error, size)
+{
+  //Check the error 
+  if(error)
+  {
+    //Something went wrong...
+  }
+  
+  console.log('The size of the file is: ' + size);
+});
+```
+
+
 #### utily.fs.unlink(files, cb)
 
 Remove a list of files. The `files` argument must be a `string` for a single file, or an `array` with the file paths to remove.
@@ -75,25 +94,6 @@ utily.fs.rm('./another-file.txt', function(error)
   
 });
 ```
-
-#### utily.fs.size(file, cb)
-
-Returns the size of the file. The callback function will be executed with an `error` object and the `size` of the file.
-
-```javascript
-//Get the size of the file 
-utily.fs.size('/path/to/file.txt', function(error, size)
-{
-  //Check the error 
-  if(error)
-  {
-    //Something went wrong...
-  }
-  
-  console.log('The size of the file is: ' + size);
-});
-```
-
 
 
 ### Is functions
