@@ -48,6 +48,21 @@ utily.fs.exists('/path/to/my/file.txt', function(error, exists)
 });
 ```
 
+#### utily.fs.mkdir(path, cb)
+
+Create a directory and all the subdirectories of `path`.
+
+```javascript
+//Create the directory and all the subdirectories (if does not exists)
+utily.fs.mkdir('/path/to/my/directory', function(error)
+{
+  //Check the error 
+  if(error){ /* Something went wrong */ }
+  
+  console.log('Directory created!');
+});
+```
+
 #### utily.fs.size(file, cb)
 
 Returns the size of the file. The callback function will be executed with an `error` object and the `size` of the file.
