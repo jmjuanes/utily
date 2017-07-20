@@ -23,6 +23,25 @@ var utily = require('utily');
 
 ### File System functions 
 
+#### utily.fs.checksum(file\[, options\], cb)
+
+Generate the checksum of `file`. `options` can be an object with the following options: 
+
+- `algorithm`: a `string` with the algorithm to generate the checksum. Default is `md5`.
+- `encoding`: a `string` with the encoding. Default is `hex`.
+
+
+```javascript
+//Generate the md5 of the file 
+utily.fs.checksum('/path/to/file.txt', function(error, sum)
+{
+  //Check the error 
+  if(error){ /* Something went wrong */ }
+  
+  console.log('Checksum --> ' + sum);
+});
+```
+
 #### utily.fs.exists(file, cb)
 
 Check if the file or directory exists, and then the `cb` method will be executed with two arguments (`error` and a boolean `exists` that indicates if the file or directory exists).
