@@ -1,5 +1,5 @@
-//Import file functions
-module.exports.file = require('./lib/file.js');
+//Import file system functions
+module.exports.fs = require('./lib/fs.js');
 
 //Import type checker functions
 module.exports.is = require('./lib/is.js');
