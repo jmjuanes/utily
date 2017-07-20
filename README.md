@@ -25,7 +25,7 @@ var utily = require('utily');
 
 #### utily.fs.exists(file, cb)
 
-Check if the file exists, and then the `cb` method will be executed with two arguments (`error` and a boolean `exists` that indicates if the file exists).
+Check if the file or directory exists, and then the `cb` method will be executed with two arguments (`error` and a boolean `exists` that indicates if the file or directory exists).
 
 ```javascript
 utily.fs.exists('/path/to/my/file.txt', function(error, exists)
@@ -48,7 +48,7 @@ utily.fs.exists('/path/to/my/file.txt', function(error, exists)
 });
 ```
 
-#### utily.fs.rm(files, cb)
+#### utily.fs.unlink(files, cb)
 
 Remove a list of files. The `files` argument must be a `string` for a single file, or an `array` with the file paths to remove.
 
