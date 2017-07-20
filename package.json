@@ -7,5 +7,9 @@
   "repository": { "type": "git", "url": "https://github.com/jmjuanes/utily.git" },
   "main": "index.js",
   "keywords": [ "util", "utils", "utility" ],
-  "dependencies": {}
+  "dependencies":
+  {
+    "mkdirp": "0.5.1",
+    "rmr": "0.0.4"
+  }
 }
