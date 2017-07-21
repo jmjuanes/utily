@@ -84,5 +84,33 @@ describe('utily -> fs', function()
       });
     });
   });
+
+  //Test unlink method
+  describe('-> unlink method', function()
+  {
+    //Delete a list of file
+    it('should delete a list of files', function(done)
+    {
+      var file1 = path.join(__dirname, './fs-unlink-test1.txt');
+      var file2 = path.join(__dirname, './fs-unlink-test2.txt');
+      fs.writeFileSync(file1, 'Test 1', 'utf8');
+      fs.writeFileSync(file2, 'Test 2', 'utf8');
+      return utily.fs.unlink([ file1, file2 ], function(error)
+      {
+        assert.equal(null, error);
+        return utily.fs.exists(file1, function(error, exists)
+        {
+          assert.equal(null, error);
+          assert.equal(false, exists);
+          return utily.fs.exists(file2, function(error, exists)
+          {
+            assert.equal(null, error);
+            assert.equal(false, exists);
+            done();
+          });
+        });
+      });
+    });
+  });
 });
 
