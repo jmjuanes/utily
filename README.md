@@ -30,6 +30,7 @@ Generate the checksum of `file`. `options` can be an object with the following o
 - `algorithm`: a `string` with the algorithm to generate the checksum. Default is `md5`.
 - `encoding`: a `string` with the encoding. Default is `hex`.
 
+If `options` is a non-object, it will be treated as the `options.algorithm` option.
 
 ```javascript
 //Generate the md5 of the file 
