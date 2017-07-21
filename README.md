@@ -353,6 +353,14 @@ Return the capitalized format of `str`.
 utily.string.capitalize('hello world');  // -> 'Hello world'
 ```
 
+#### utily.string.unique()
+
+Generate a unique random string of 15 characters.
+
+```javascript
+var str = utily.string.unique();  // -> str = 'wv1ufiqj5e6xd3k'
+```
+
 
 ## License 
 
