@@ -366,6 +366,14 @@ var values = utily.object.values({ a: 1, b: 2, c: 'hello' }); // -> values = [ 1
 
 ### String functions 
 
+#### utily.string.format(str, obj)
+
+Replace tokens from `str` with values of `obj`.
+
+```javascript
+utily.string.format('My car is {{ color }}!', { color: 'blue' }); // --> "My car is blue!"
+```
+
 #### utily.string.is_empty(str)
 
 Return true if `str` is an empty string.
