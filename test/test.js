@@ -86,7 +86,7 @@ describe('utily -> fs', function()
     //Create a folder
     it('should create the folders', function(done)
     {
-      var folders = path.join(__dirname, './testing/folders/yeah');
+      var folders = path.join(__dirname, './new/folders/yeah');
       return utily.fs.mkdir(folders, function(error)
       {
         assert.equal(null, error);
