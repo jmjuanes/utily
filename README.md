@@ -43,6 +43,18 @@ utily.fs.checksum('/path/to/file.txt', function(error, sum)
 });
 ```
 
+#### utily.fs.copy(source, destination, cb)
+
+Copy a `source` file to `destination`.
+
+```javascript
+utily.fs.copy('/my/source/file.txt', '/my/destination/file.txt', function(error)
+{
+  //Check the error 
+  if(error){ /* Something went wrong */ } 
+});
+```
+
 #### utily.fs.exists(path, cb)
 
 Check if the provided path exists, and then the `cb` method will be executed with two arguments (`error` and a boolean `exists` that indicates if the path exists).
