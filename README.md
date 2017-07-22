@@ -68,6 +68,50 @@ utily.fs.exists('/path/to/my/file.txt', function(error, exists)
 });
 ```
 
+#### utily.fs.isDir(path, cb)
+
+Check if the provided path exists and is a directory or not.
+
+```javascript
+utily.fs.isDir('/path/to/my/directory', function(error, is_dir)
+{
+  //Check the error 
+  if(error){ /* Something went wrong */ }
+  
+  //Check if is a directory 
+  if(is_dir === true)
+  {
+    //Path exists and is a directory    
+  }
+  else
+  {
+    //Path does not exists ot is not a directory
+  }
+});
+```
+
+#### utily.fs.isFile(path, cb)
+
+Check if the provided path exists and is a file or not.
+
+```javascript
+utily.fs.isDir('/path/to/my/file.txt', function(error, is_file)
+{
+  //Check the error 
+  if(error){ /* Something went wrong */ }
+  
+  //Check if is a file
+  if(is_file === true)
+  {
+    //Path exists and is a file
+  }
+  else
+  {
+    //Path does not exists or is not a file
+  }
+});
+```
+
 #### utily.fs.mkdir(path, cb)
 
 Create a directory and all the subdirectories of `path`.
