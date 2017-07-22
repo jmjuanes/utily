@@ -368,7 +368,7 @@ var values = utily.object.values({ a: 1, b: 2, c: 'hello' }); // -> values = [ 1
 
 #### utily.string.format(str, obj)
 
-Replace tokens from `str` with values of `obj`.
+Replace all handlebars expressions from `str` with values of `obj`.
 
 ```javascript
 utily.string.format('My car is {{ color }}!', { color: 'blue' }); // --> "My car is blue!"
