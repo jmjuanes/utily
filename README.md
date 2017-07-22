@@ -43,9 +43,9 @@ utily.fs.checksum('/path/to/file.txt', function(error, sum)
 });
 ```
 
-#### utily.fs.exists(file, cb)
+#### utily.fs.exists(path, cb)
 
-Check if the file or directory exists, and then the `cb` method will be executed with two arguments (`error` and a boolean `exists` that indicates if the file or directory exists).
+Check if the provided path exists, and then the `cb` method will be executed with two arguments (`error` and a boolean `exists` that indicates if the path exists).
 
 ```javascript
 utily.fs.exists('/path/to/my/file.txt', function(error, exists)
