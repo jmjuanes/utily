@@ -90,12 +90,8 @@ describe('utily -> fs', function()
       return utily.fs.mkdir(folders, function(error)
       {
         assert.equal(null, error);
-        return utily.fs.exists(folders, function(error, exists)
-        {
-          assert.equal(null, error);
-          assert.equal(true, exists);
-          done();
-        });
+        assert.equal(true, fs.existsSync(folders));
+        done();
       });
     });
   });
