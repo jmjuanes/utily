@@ -80,6 +80,45 @@ describe('utily -> fs', function()
     });
   });
 
+  //Test isDir method
+  describe('-> isDir method', function()
+  {
+    //Folder that exists
+    it('should return that the folder path is a directory', function(done)
+    {
+      return utily.fs.isDir(__dirname, function(error, exists)
+      {
+        assert.equal(null, error);
+        assert.equal(true, exists);
+        done();
+      });
+    });
+
+    //Path is a file
+    it('should return that the file path is not a directory', function(done)
+    {
+      var file = path.join(__dirname, 'test.js');
+      return utily.fs.isDir(file, function(error, exists)
+      {
+        assert.equal(null, error);
+        assert.equal(false, exists);
+        done();
+      });
+    });
+
+    //Path does not exists
+    it('should return that the fake path is not a directory', function(done)
+    {
+      var fake = path.join(__dirname, './fake/path');
+      return utily.fs.isDir(fake, function(error, exists)
+      {
+        assert.equal(null, error);
+        assert.equal(false, exists);
+        done();
+      });
+    })
+  });
+
   //Test mkdir method
   describe('-> mkdir method', function()
   {
