@@ -164,7 +164,7 @@ Remove a list of files. The `files` argument must be a `string` for a single fil
 
 ```javascript
 //Remove multiple files
-utily.fs.rm([ './file1.txt', './file2.txt' ], function(error)
+utily.fs.unlink([ './file1.txt', './file2.txt' ], function(error)
 {
   //Check if there is an error 
   if(error)
@@ -175,7 +175,7 @@ utily.fs.rm([ './file1.txt', './file2.txt' ], function(error)
 });
 
 //Remove a single file 
-utily.fs.rm('./another-file.txt', function(error)
+utily.fs.unlinkg('./another-file.txt', function(error)
 {
   //Check if there is an error 
   if(error)
