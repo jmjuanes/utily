@@ -23,6 +23,38 @@ describe('utily -> fs', function()
     });
   });
 
+  //Test copy method
+  describe('-> copy method', function()
+  {
+    //Copy files
+    it('shgould copy a file that exists', function(done)
+    {
+      var file_source = path.join(__dirname, 'fs-copy-source.txt');
+      var file_destination = path.join(__dirname, 'fs-copy-destination.txt');
+      fs.writeFileSync(file_source, 'This is the content of the file 1', 'utf8');
+      return utily.fs.copy(file_source, file_destination, function(error)
+      {
+        assert.equal(null, error);
+        var content1 = fs.readFileSync(file_source, 'utf8');
+        var content2 = fs.readFileSync(file_destination, 'utf8');
+        assert.equal(content1, content2);
+        done();
+      });
+    });
+
+    //Display an error
+    it('should return an error if source file does not exists', function(done)
+    {
+      var file_source = path.join(__dirname, 'fs-copy-source-unexistent.txt');
+      var file_destination = path.join(__dirname, 'fs-copy-destination.txt');
+      return utily.fs.copy(file_source, file_destination, function(error)
+      {
+        assert.notEqual(null, error);
+        done();
+      });
+    });
+  });
+
   //Test exists method
   describe('-> exists method', function()
   {
