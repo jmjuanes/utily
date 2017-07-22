@@ -126,17 +126,9 @@ describe('utily -> fs', function()
       return utily.fs.unlink([ file1, file2 ], function(error)
       {
         assert.equal(null, error);
-        return utily.fs.exists(file1, function(error, exists)
-        {
-          assert.equal(null, error);
-          assert.equal(false, exists);
-          return utily.fs.exists(file2, function(error, exists)
-          {
-            assert.equal(null, error);
-            assert.equal(false, exists);
-            done();
-          });
-        });
+        assert.equal(false, fs.existsSync(file1));
+        assert.equal(false, fs.existssync(file2));
+        done();
       });
     });
   });
