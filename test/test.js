@@ -127,7 +127,7 @@ describe('utily -> fs', function()
       {
         assert.equal(null, error);
         assert.equal(false, fs.existsSync(file1));
-        assert.equal(false, fs.existssync(file2));
+        assert.equal(false, fs.existsSync(file2));
         done();
       });
     });
