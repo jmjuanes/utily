@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": { "type": "git", "url": "https://github.com/jmjuanes/utily.git" },
   "main": "index.js",
-  "keywords": [ "util", "utils", "utility" ],
+  "keywords": [ "util", "utils", "utility", "fs", "file-system", "json", "typeof", "string", "strings" ],
   "dependencies": {},
   "devDependencies":
   {
