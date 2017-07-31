@@ -21,6 +21,39 @@ var utily = require('utily');
 
 ## API 
 
+### Common methods 
+
+#### utily.each(items, fn)
+
+Iterate over an `array` or an `object`.
+
+- `items`: `array` or `object` you want to iterate.
+- `fn`: function that will be called with each item of the `items` array or object with the following arguments: 
+  - `key`: the property name if `items` is an object, or the index if `items` is an array.
+  - `value`: the property value if `items` is an object, or the value if `items` is an array.
+  
+```javascript
+//Iterate over an array 
+utily.each([1, 2, 3], function(index, value)
+{
+  //Display in console 
+  console.log(index + ' -> ' + value);
+});
+// 0 -> 1
+// 1 -> 2
+// 2 -> 3
+
+//Iterate over an object 
+utily.each({ 'key1': 'value1', 'key2': 'value2' }, function(key, value)
+{
+  //Display in console 
+  console.log(key + ' -> ' + value);
+});
+// key1 -> value1
+// key2 -> value2
+```
+
+
 ### File System functions 
 
 #### utily.fs.checksum(file\[, options\], cb)
