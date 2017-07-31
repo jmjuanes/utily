@@ -1,3 +1,6 @@
+//Import common methods
+module.exports = require('./lib/index.js');
+
 //Import file system functions
 module.exports.fs = require('./lib/fs.js');
 
