@@ -75,6 +75,16 @@ utily.each([1, 2, 3, 4, 5], function(index, value)
 // 2 -> 3
 ```
 
+#### utily.eachAsync(items, fn, callback)
+
+Asynchronous version of `utily.each`. Iterate over an `array` or an `object` and execute the `callback` when the iteration is finished.
+
+- The `fn` function will be called with the same arguments as the `utily.each` method and with a `next` function, that indicates that the iteration is done and can continue with the next item. 
+- The `callback` function will be called when the iteration is finished. 
+
+You can break the iteration by calling the `next` function with a value or an error object.
+
+
 
 ### File System functions 
 
