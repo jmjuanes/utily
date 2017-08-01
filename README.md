@@ -24,6 +24,17 @@ var utily = require('utily');
 
 ### Common methods 
 
+#### utily.delay(time, fn)
+
+This is just [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) but with the arguments reverted (first the delay `time`, then the callback `fn` function).
+
+```javascript
+utily.delay(1000, function()
+{
+  console.log('Hello after 1 second!!');
+});
+```
+
 #### utily.each(items, fn)
 
 Iterate over an `array` or an `object`.
