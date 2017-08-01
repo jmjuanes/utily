@@ -82,8 +82,37 @@ Asynchronous version of `utily.each`. Iterate over an `array` or an `object` and
 - The `fn` function will be called with the same arguments as the `utily.each` method and with a `next` function, that indicates that the iteration is done and can continue with the next item. 
 - The `callback` function will be called when the iteration is finished. 
 
-You can break the iteration by calling the `next` function with a value or an error object.
+You can break the iteration by calling the `next` function with a value or an error object. 
 
+```javascript
+//List of files 
+var files = ['./file1.txt', './file2.txt', './file3.txt'];
+
+//Read all the files
+utily.eachAsync(file, function(index, value, next)
+{
+  //Read the file content
+  return fs.readFile(value, function(error, data)
+  {
+    //If something went wrong -> stop the iteration
+    if(error){ return next(error); } 
+    
+    //Display the file content in console 
+    console.log('Content of file ' + index);
+    console.log(data);
+    
+    //Next file in the list 
+    return next();
+  });
+}, function(error)
+{
+  //Check the error 
+  if(error){ return console.log(error.message); } 
+  
+  //Display done 
+  console.log('All files processed!');
+});
+```
 
 
 ### File System functions 
