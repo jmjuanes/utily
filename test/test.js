@@ -4,6 +4,41 @@ var fs = require('fs');
 var path = require('path');
 var utily = require('../index.js');
 
+//Test common methods
+describe('utily -> commons', function()
+{
+  //Each method
+  describe('-> each method', function()
+  {
+    it('should iterate over all the elements in an array', function(done)
+    {
+      var list = [0, 1, 2, 3, 4];
+      var counter = 0;
+      utily.each(list, function(index, value)
+      {
+        assert.equal(counter, index);
+        assert.equal(list[index], value);
+        counter = counter + 1;
+      });
+      done();
+    });
+
+    it('should iterate over all the elements in an object', function(done)
+    {
+      var obj = { 'key1': 'value1', 'key2': 'value2' };
+      var keys = Object.keys(obj);
+      var counter = 0;
+      utily.each(obj, function(key, value)
+      {
+        assert.equal(keys[counter], key);
+        assert.equal(obj[key], value);
+        counter = counter + 1;
+      });
+      done();
+    });
+  });
+});
+
 //Test the fs methods
 describe('utily -> fs', function()
 {
