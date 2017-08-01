@@ -37,6 +37,43 @@ describe('utily -> commons', function()
       done();
     });
   });
+
+  //Each Async method
+  describe('-> each async method', function()
+  {
+    it('should iterate over all the elements in an array', function(done)
+    {
+      var list = [0, 1, 2, 3, 4];
+      var counter = 0;
+      utily.eachAsync(list, function(index, value, next)
+      {
+        setTimeout(function()
+        {
+          assert.equal(counter, index);
+          assert.equal(list[index], value);
+          counter = counter + 1;
+          next();
+        }, 100);
+      }, function(){ return done(); });
+    });
+
+    it('should iterate over all the elements in an object', function(done)
+    {
+      var obj = { 'key1': 'value1', 'key2': 'value2' };
+      var keys = Object.keys(obj);
+      var counter = 0;
+      utily.eachAsync(obj, function(key, value, next)
+      {
+        setTimeout(function()
+        {
+          assert.equal(keys[counter], key);
+          assert.equal(obj[key], value);
+          counter = counter + 1;
+          next();
+        }, 100);
+      }, function(){ return done(); });
+    });
+  });
 });
 
 //Test the fs methods
