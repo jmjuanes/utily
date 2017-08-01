@@ -4,6 +4,7 @@
 
 [![npm](https://img.shields.io/npm/v/utily.svg?style=flat-square)](https://www.npmjs.com/package/utily)
 [![npm](https://img.shields.io/npm/dt/utily.svg?style=flat-square)](https://www.npmjs.com/package/utily)
+[![npm](https://img.shields.io/npm/l/utily.svg?style=flat-square)](https://github.com/jmjuanes/utily)
 
 ## Installation 
 
