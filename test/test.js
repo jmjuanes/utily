@@ -284,3 +284,21 @@ describe('utily -> fs', function()
   });
 });
 
+//Test object methods
+describe('utily -> object', function()
+{
+  //Test each method
+  describe('-> each method', function()
+  {
+    it('should iterate over all the elements in an object', function(done)
+    {
+      var obj = { key1: 'value1', key2: 'value2', key3: 'value3' };
+      utily.object.each(obj, function(key, value)
+      {
+        assert.equal(value, obj[key]);
+      });
+      done();
+    });
+  });
+});
+
