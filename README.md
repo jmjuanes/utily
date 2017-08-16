@@ -469,6 +469,19 @@ Returns an array of a given object's own enumerable property values. It's a pony
 var values = utily.object.values({ a: 1, b: 2, c: 'hello' }); // -> values = [ 1, 2, 'hello' ]
 ```
 
+#### utily.object.each(obj, fn)
+
+Execute `fn` with each pair `key` - `value` in `obj`. 
+
+```javascript
+var obj = { key1: 'value1', key2: 'value2', key3: 'value3' };
+utily.object.each(obj, function(key, value)
+{
+  //Display in console
+  console.log(key + ' -> ' + value);
+});
+```
+
 
 ### String functions 
 
