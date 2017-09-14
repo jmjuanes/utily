@@ -156,10 +156,10 @@ utily.array.min([1, 2, 3, 4, 5]); // -> 1
 
 #### utily.array.range(start, end\[, step\])
 
-Returns a new array with values starting in `start` to `end` (included). You can specify the distance between each number in the sequence by providing a `step` value.
+Returns a new array with values starting in `start` to `end` (included). You can specify the distance between each number in the sequence by providing a `step` value. Default `step`is `1`.
 
 ```javascript
-utily.array.range(0, 5, 1); // -> [0, 1, 2, 3, 4, 5]
+utily.array.range(0, 5); // -> [0, 1, 2, 3, 4, 5]
 utily.array.range(0, 4, 2); // -> [0, 2, 4] 
 ```
 
