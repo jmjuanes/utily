@@ -131,11 +131,27 @@ utily.eachAsync(file, function(index, value, next)
 
 #### utily.array.has(array, item)
 
-Return `true` if `item` exists in `array`, `false` if does not.
+Returns `true` if `item` exists in `array`, `false` if does not.
 
 ```javascript
 utily.array.has([1, 2, 3, 4], 2); // -> true
 utily.array.has([1, 2, 3, 4], 5); // -> false
+```
+
+#### utily.array.max(array)
+
+Returns the maximum value in `array`. 
+
+```javascript
+utily.array.max([1, 2, 3, 4, 5]); // -> 5
+```
+
+#### utily.array.min(array)
+
+Returns the minimum value in `array`.
+
+```javascript
+utily.array.min([1, 2, 3, 4, 5]); // -> 1
 ```
 
 #### utily.array.range(start, end\[, step\])
