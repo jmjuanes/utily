@@ -129,6 +129,15 @@ utily.eachAsync(file, function(index, value, next)
 
 ### Array functions 
 
+#### utily.array.range(start, end\[, step\])
+
+Returns a new array with values starting in `start` to `end` (included). You can specify the distance between each number in the sequence by providing a `step` value.
+
+```javascript
+utily.array.range(0, 5, 1); // -> [0, 1, 2, 3, 4, 5]
+utily.array.range(0, 4, 2); // -> [0, 2, 4] 
+```
+
 #### utily.array.remove(array, item)
 
 Removes a specific `item` of the array `array`. This method also modifies the original array.
