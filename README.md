@@ -127,6 +127,21 @@ utily.eachAsync(file, function(index, value, next)
 ```
 
 
+### Array functions 
+
+#### utily.array.remove(array, item)
+
+Removes a specific `item` of the array `array`. This method also modifies the original array.
+
+```javascript
+var list = [ 'bananas', 'oranges', 'apples' ]; 
+
+//Remove an element 
+utily.array.remove(list, 'oranges'); // -> list = [ 'bananas', 'apples' ];
+```
+
+
+
 ### File System functions 
 
 #### utily.fs.checksum(file\[, options\], cb)
