@@ -129,6 +129,15 @@ utily.eachAsync(file, function(index, value, next)
 
 ### Array functions 
 
+#### utily.array.has(array, item)
+
+Return `true` if `item` exists in `array`, `false` if does not.
+
+```javascript
+utily.array.has([1, 2, 3, 4], 2); // -> true
+utily.array.has([1, 2, 3, 4], 5); // -> false
+```
+
 #### utily.array.range(start, end\[, step\])
 
 Returns a new array with values starting in `start` to `end` (included). You can specify the distance between each number in the sequence by providing a `step` value.
