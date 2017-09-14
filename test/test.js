@@ -76,6 +76,59 @@ describe('utily -> commons', function()
   });
 });
 
+//Test array methods
+describe('utily -> array', function()
+{
+  //Test has method
+  describe('-> has method', function()
+  {
+    it('should return true if item exists in the array', function(done)
+    {
+      assert.equal(utily.array.has([1, 2, 3], 3), true);
+      done();
+    });
+    it('should return false if item does not exists in the array', function(done)
+    {
+      assert.equal(utily.array.has([1, 2, 3], 0), false);
+      done();
+    });
+  });
+
+  //Test max method
+  describe('-> max method', function()
+  {
+    it('should return the maximum value of an array', function(done)
+    {
+      assert.equal(utily.array.max([5,4,7,3,9,-10]), 9);
+      done();
+    });
+  });
+
+  //Test min method
+  describe('-> min method', function()
+  {
+    it('should return the minimum value of an array', function(done)
+    {
+      assert.equal(utily.array.min([5,4,7,3,9,-10]), -10);
+      done();
+    });
+  });
+
+  //Test remove method
+  describe('-> range method', function()
+  {
+    it('should remove an element of the array', function(done)
+    {
+      var array = utily.array.remove([0, 1, 2, 3, 4, 5], 3);
+      assert.equal(array.length, 5);
+      assert.equal(array[2], 2);
+      assert.equal(array[3], 4);
+      assert.equal(array.indexOf(3), -1);
+      done();
+    });
+  });
+});
+
 //Test the fs methods
 describe('utily -> fs', function()
 {
