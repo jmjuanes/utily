@@ -330,7 +330,7 @@ utily.fs.unlink([ './file1.txt', './file2.txt' ], function(error)
 });
 
 //Remove a single file 
-utily.fs.unlinkg('./another-file.txt', function(error)
+utily.fs.unlink('./another-file.txt', function(error)
 {
   //Check if there is an error 
   if(error)
