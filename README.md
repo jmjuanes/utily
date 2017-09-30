@@ -315,7 +315,9 @@ utily.fs.size('/path/to/file.txt', function(error, size)
 
 #### utily.fs.unlink(files, cb)
 
-Remove a list of files. The `files` argument must be a `string` for a single file, or an `array` with the file paths to remove.
+Remove a list of files. The `files` argument must be a `string` for a single file, or an `array` with the file paths to remove. 
+
+**Note**: this method does not throw an error if the path does not exists.
 
 ```javascript
 //Remove multiple files
