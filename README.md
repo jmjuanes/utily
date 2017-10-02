@@ -555,6 +555,29 @@ This is just [`Object.keys`](https://developer.mozilla.org/en-US/docs/Web/JavaSc
 var keys = utily.object.keys({ a: 1, b: 2, c: 'hello' }); // --> keys = [ 'a', 'b', 'c' ]
 ```
 
+#### utily.object.sort(array, keys, order)
+
+Sort an array with objects by the provided `keys` and with the provided `order` (default is `ASC` order).
+
+```javascript
+var list = [];
+list.push({ name: 'Susan', age: 35 });
+list.push({ name: 'Boby', age: 28 });
+list.push({ name: 'Andy', age: 24 });
+list.push({ name: 'Sarah', age: 29 });
+
+//Sort the list 
+utily.object.sort(list, 'name', 'ASC');
+
+//Print the array 
+console.log(list);
+// [ { name: 'Andy', age: 24 }, 
+// { name: 'Boby', age: 28 }, 
+// { name: 'Sarah', age: 29 }, 
+// { name: 'Susan', age: 35 } ]
+
+```
+
 #### utily.object.values(obj)
 
 Returns an array of a given object's own enumerable property values. It's a ponyfill of the [ `Object.values`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values) method.
