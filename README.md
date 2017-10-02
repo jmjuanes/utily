@@ -312,6 +312,28 @@ utily.fs.size('/path/to/file.txt', function(error, size)
 });
 ```
 
+#### utily.fs.readdir(path, cb)
+
+Reads the content of a directory. The callback method gets two arguments, `error` and `files`, where `files` is an array with the **real** path of each file in the provided directory.
+
+```javascript
+//Content of directory /test/fake/directory: 
+// - index.js
+// - package.json
+// - license.txt
+
+//Read the content of a directory 
+return utily.fs.readdit('/test/fake/directory', function(error, files)
+{
+  //Check the error 
+  if(error){ /* display error */ }
+  
+  //Work with the list of files 
+  console.log(files);
+  // files = ['/test/fake/directory/index.js', '/test/fake/directory/package.json', ''/test/fake/directory/license.txt']
+});
+```
+
 
 #### utily.fs.unlink(files, cb)
 
