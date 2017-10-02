@@ -330,7 +330,10 @@ return utily.fs.readdit('/test/fake/directory', function(error, files)
   
   //Work with the list of files 
   console.log(files);
-  // files = ['/test/fake/directory/index.js', '/test/fake/directory/package.json', ''/test/fake/directory/license.txt']
+  // files = [
+  // '/test/fake/directory/index.js', 
+  // '/test/fake/directory/package.json', '
+  // '/test/fake/directory/license.txt']
 });
 ```
 
