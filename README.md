@@ -281,10 +281,10 @@ utily.fs.isDir('/path/to/my/file.txt', function(error, is_file)
 
 #### utily.fs.mkdir(path, cb)
 
-Create a directory and all the subdirectories of `path`.
+Create a folder and all the parent folders of `path`.
 
 ```javascript
-//Create the directory and all the subdirectories (if does not exists)
+//Create the folder and all the parent folders (if does not exists)
 utily.fs.mkdir('/path/to/my/directory', function(error)
 {
   //Check the error 
