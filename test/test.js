@@ -355,6 +355,26 @@ describe('utily -> json', function()
         done();
       });
     });
+    it('should display error if file doest not exists', function(done)
+    {
+      var json_read_path = path.join(__dirname, './json-read-test2.json');
+      return utily.json.read(json_read_path, function(error, data)
+      {
+        assert.notEqual(null, error);
+        assert.equal('ENOENT', error.code);
+        done();
+      });
+    });
+    it('should display error if content is not a valid JSON', function(done)
+    {
+      var json_read_path = path.join(__dirname, './json-read-test3.json');
+      fs.writeFileSync(json_read_path, 'Invalid JSON content', 'utf8');
+      return utily.json.read(json_read_path, function(error, data)
+      {
+        assert.notEqual(null, error);
+        done();
+      });
+    });
   });
 });
 
