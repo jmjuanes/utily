@@ -342,7 +342,7 @@ describe('utily -> json', function()
 {
   describe('-> read method', function()
   {
-    it('should read a json file', function(done)
+    it('should read a JSON file', function(done)
     {
       var json_read_obj = { key1: 'value1', key2: 'value2' };
       var json_read_path = path.join(__dirname, './json-read-test1.json');
@@ -372,6 +372,31 @@ describe('utily -> json', function()
       return utily.json.read(json_read_path, function(error, data)
       {
         assert.notEqual(null, error);
+        done();
+      });
+    });
+  });
+
+  describe('-> write method', function()
+  {
+    it('should write a JSON file', function(done)
+    {
+      var json_write_path = path.join(__dirname, './json-write-test1.json');
+      var json_write_obj = { key1: 'value1', key2: 'value2' };
+      return utily.json.write(json_write_path, json_write_obj, function(error)
+      {
+        assert.equal(null, error);
+        try
+        {
+          var content = fs.readFileSync(json_write_path, 'utf8');
+          content = JSON.parse(content);
+        }
+        catch(error)
+        {
+          return done(error);
+        }
+        assert.equal(content.key1, json_write_obj.key1);
+        assert.equal(content.key2, json_write_obj.key2);
         done();
       });
     });
