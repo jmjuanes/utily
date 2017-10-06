@@ -337,6 +337,27 @@ describe('utily -> fs', function()
   });
 });
 
+//Test json methods
+describe('utily -> json', function()
+{
+  describe('-> read method', function()
+  {
+    it('should read a json file', function(done)
+    {
+      var json_read_obj = { key1: 'value1', key2: 'value2' };
+      var json_read_path = path.join(__dirname, './json-read-test1.json');
+      fs.writeFileSync(json_read_path, JSON.stringify(json_read_obj), 'utf8');
+      return utily.json.read(json_read_path, function(error, data)
+      {
+        assert.equal(null, error);
+        assert.equal(json_read_obj.key1, data.key1);
+        assert.equal(json_read_obj.key2, data.key2);
+        done();
+      });
+    });
+  });
+});
+
 //Test object methods
 describe('utily -> object', function()
 {
