@@ -355,3 +355,30 @@ describe('utily -> object', function()
   });
 });
 
+//Test queue methods
+describe('utily -> queue', function()
+{
+  //Test
+  it('should run functions in order', function(done)
+  {
+    var counter = 0;
+    utily.queue.add('test1', function(next)
+    {
+      assert.equal(counter, 0);
+      counter = counter + 1;
+      return next();
+    });
+    utily.queue.add('test1', function(next)
+    {
+      assert.equal(counter, 1);
+      counter = counter + 1;
+      return next();
+    });
+    utily.queue.add('test1', function(next)
+    {
+      assert.equal(counter, 2);
+      return done();
+    });
+  });
+});
+
