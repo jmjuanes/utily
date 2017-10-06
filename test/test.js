@@ -358,8 +358,7 @@ describe('utily -> object', function()
 //Test queue methods
 describe('utily -> queue', function()
 {
-  //Test
-  it('should run functions in order', function(done)
+  it('should run tasks in order', function(done)
   {
     var counter = 0;
     utily.queue.add('test1', function(next)
@@ -377,6 +376,25 @@ describe('utily -> queue', function()
     utily.queue.add('test1', function(next)
     {
       assert.equal(counter, 2);
+      next();
+      return done();
+    });
+  });
+
+  it('should pause and resume tasks', function(done)
+  {
+    var ready = false;
+    utily.queue.add('test2', function(next)
+    {
+      //Pause the queue
+      utily.queue.pause('test2');
+      next();
+      setTimeout(function(){ ready = true; utily.queue.resume('test2'); }, 1000);
+    });
+    utily.queue.add('test2', function(next)
+    {
+      assert.equal(ready, true);
+      next();
       return done();
     });
   });
