@@ -366,13 +366,13 @@ describe('utily -> queue', function()
     {
       assert.equal(counter, 0);
       counter = counter + 1;
-      return next();
+      setTimeout(function(){ return next(); }, 500);
     });
     utily.queue.add('test1', function(next)
     {
       assert.equal(counter, 1);
       counter = counter + 1;
-      return next();
+      setTimeout(function(){ return next(); }, 500);
     });
     utily.queue.add('test1', function(next)
     {
