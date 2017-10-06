@@ -398,5 +398,25 @@ describe('utily -> queue', function()
       return done();
     });
   });
+
+  it('should cancel a queue', function(done)
+  {
+    var cancelled = true;
+    utily.queue.add('test3', function(next)
+    {
+      setTimeout(function(){ return next(); }, 500);
+    });
+    utily.queue.add('test3', function(next)
+    {
+      cancelled = false;
+      next();
+    });
+    utily.queue.cancel('test3');
+    setTimeout(function()
+    {
+      assert.equal(cancelled, true);
+      return done();
+    }, 1500);
+  });
 });
 
