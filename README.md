@@ -133,6 +133,10 @@ utily.eachAsync(file, function(index, value, next)
 
 Clone an array. Note that if objects exist in the array this method does not do perform a **deep** clone of the content.
 
+```javascript
+var array_cloned = utily.array.clone([1, 2, 3, 4]);
+```
+
 #### utily.array.has(array, item)
 
 Returns `true` if `item` exists in `array`, `false` if does not.
