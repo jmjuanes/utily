@@ -129,6 +129,10 @@ utily.eachAsync(file, function(index, value, next)
 
 ### Array functions 
 
+#### utily.array.clone(array)
+
+Clone an array. Note that if objects exist in the array this method does not do perform a **deep** clone of the content.
+
 #### utily.array.has(array, item)
 
 Returns `true` if `item` exists in `array`, `false` if does not.
