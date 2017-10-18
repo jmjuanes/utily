@@ -16,8 +16,11 @@ module.exports.json = require('./lib/json.js');
 //Import object functions
 module.exports.object = require('./lib/object.js');
 
-//Import queue functions
-module.exports.queue = require('./lib/queue.js');
+//Import storage manager
+module.exports.storage = require('./lib/storage.js');
 
 //Import string functions
 module.exports.string = require('./lib/string.js');
+
+//Import task functions
+module.exports.task = require('./lib/task.js');
